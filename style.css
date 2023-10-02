@@ -60,5 +60,9 @@ span{
 }
 img{
     padding: 5px;
-    margin: 15px 50px;
+    margin: 5px 90px;
+}
+#footer{
+    background-color: rgba(0, 0, 0, 0.945);
+    color:white;
 }
