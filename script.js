@@ -16,12 +16,18 @@ const getWeather = (city) => {
 			cloud_pct.innerHTML = response.cloud_pct
 			feels_like.innerHTML = response.feels_like
 			humidity.innerHTML = response.humidity
-			max_temp.innerHTML = response.max_temp
-			min_temp.innerHTML = response.min_temp
 			temp.innerHTML = response.temp
 			wind_degrees.innerHTML = response.wind_degrees
 			wind_speed.innerHTML = response.wind_speed
 
+			const max = response.max_temp
+			$max_temp = max + 5;
+			max_temp.innerHTML = $max_temp;
+
+			const min = response.min_temp
+			$min_temp = min - 5;
+			min_temp.innerHTML = $min_temp;
+			
 			const milliseconds1 = response.sunrise
 
 			var seconds1 = Math.floor(milliseconds1 / 1000);
@@ -30,7 +36,7 @@ const getWeather = (city) => {
 
 			$seconds1 = seconds1 % 60;
 			$minutes1 = minutes1 % 60;
-			$hours1 = hours1 % 12;
+			$hours1 = hours1 % 12 + 3;
 			
 			rise.innerHTML = $hours1+":"+$minutes1+":"+$seconds1;
 
@@ -42,7 +48,7 @@ const getWeather = (city) => {
 
 			$seconds2 = seconds2 % 60;
 			$minutes2 = minutes2 % 60;
-			$hours2 = hours2 % 12;
+			$hours2 = hours2 % 12 + 3;
 			
 			set.innerHTML = $hours2+":"+$minutes2+":"+$seconds2;
 			
